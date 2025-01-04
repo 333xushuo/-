@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+     <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,28 +10,29 @@
 <body>
   <header>
     <h1>中医九大体质测试</h1>
-    <p>通过回答问题了解您的体质类型！</p >
+    <p>通过逐题回答问题，了解您的体质类型！</p >
   </header>
 
   <main>
     <form id="quizForm">
-      <!-- 阳虚质问题 -->
-      <h2>阳虚质</h2>
-      <div class="question">
-        <p>1. 您是否常常手脚冰凉，尤其是天气较冷时？</p >
+      <div class="question-page" id="page-1">
+        <h2>问题 1</h2>
+        <p>您是否常常手脚冰凉，尤其是天气较冷时？</p >
         <label><input type="radio" name="q1" value="阳虚质"> 从不</label>
         <label><input type="radio" name="q1" value="阳虚质"> 偶尔</label>
         <label><input type="radio" name="q1" value="阳虚质"> 经常</label>
         <label><input type="radio" name="q1" value="阳虚质"> 总是</label>
       </div>
-      <div class="question">
-        <p>2. 您是否容易感到畏寒，或喜欢穿得比别人多？</p >
+
+      <div class="question-page" id="page-2" style="display: none;">
+        <h2>问题 2</h2>
+        <p>您是否容易感到畏寒，或喜欢穿得比别人多？</p >
         <label><input type="radio" name="q2" value="阳虚质"> 从不</label>
         <label><input type="radio" name="q2" value="阳虚质"> 偶尔</label>
         <label><input type="radio" name="q2" value="阳虚质"> 经常</label>
         <label><input type="radio" name="q2" value="阳虚质"> 总是</label>
       </div>
-      <div class="question">
+
         <p>3. 您是否喜欢喝热茶，而不是冷饮？</p >
         <label><input type="radio" name="q3" value="阳虚质"> 从不</label>
         <label><input type="radio" name="q3" value="阳虚质"> 偶尔</label>
@@ -88,15 +90,19 @@
         <label><input type="radio" name="q10" value="湿热质"> 偶尔</label>
         <label><input type="radio" name="q10" value="湿热质"> 经常</label>
         <label><input type="radio" name="q10" value="湿热质"> 总是</label>
+      </divclass="question">
+      <div class="question-page" id="page-3" style="display: none;">
+
+
+      <div id="navigation">
+        <button type="button" id="prevBtn" disabled>上一题</button>
+        <button type="button" id="nextBtn">下一题</button>
       </div>
 
-      <!-- 其他体质问题以同样结构继续增加 -->
-      <!-- 阴虚质、气虚质、血瘀质等 -->
-
-      <button type="button" id="submitBtn">提交测试</button>
+      <button type="submit" id="submitBtn" style="display: none;">提交测试</button>
     </form>
 
-    <section id="resultSection" style="display:none;">
+    <section id="resultSection" style="display: none;">
       <h2>测试结果</h2>
       <div id="resultContent"></div>
     </section>
@@ -109,3 +115,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+ 
