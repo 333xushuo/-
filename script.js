@@ -1,9 +1,11 @@
 
-
-  const pages = document.querySelectorAll('.question-page');
+const pages = document.querySelectorAll('.question-page');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const submitBtn = document.getElementById('submitBtn');
+const quizForm = document.getElementById('quizForm');
+const resultSection = document.getElementById('resultSection');
+const resultContent = document.getElementById('resultContent');
 
 let currentPage = 0;
 
@@ -35,5 +37,29 @@ nextBtn.addEventListener('click', () => {
   }
 });
 
+// 提交表单
+quizForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // 阻止默认提交行为
+
+  // 收集用户答案
+  const formData = new FormData(quizForm);
+  const answers = {};
+  formData.forEach((value, key) => {
+    answers[key] = value;
+  });
+
+  // 展示结果
+  resultContent.innerHTML = `
+    <h3>感谢参与！</h3>
+    <p>您的回答已提交。答案如下：</p >
+    <pre>${JSON.stringify(answers, null, 2)}</pre>
+  `;
+
+  // 隐藏测试表单，显示结果
+  quizForm.style.display = 'none';
+  resultSection.style.display = 'block';
+});
+
 // 初始化显示第一页
 showPage(currentPage);
+ 
